@@ -195,7 +195,7 @@ body {
     color: rgb(210,213,255);
     display: grid;
     grid-template-columns: 16.66% 16.66% 16.66% 16.66% 16.66% 16.66%;
-    grid-template-rows: 180px 130px 50px 200px 400px;
+    grid-template-rows: 180px 180px 50px 220px 400px;
     grid-template-areas: 'a a b b b b'
                          'c c c c c c'
                          'd d e e e e'
