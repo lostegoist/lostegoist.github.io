@@ -1,0 +1,142 @@
+
+* {
+    padding: 0;
+    margin: 0;
+    text-decoration: none;
+}
+
+body {
+    overflow-x: hidden;
+}
+/* 全部内容Box */
+.Abox {
+    height: 100vh;
+    overflow-x: hidden;
+    perspective: 3px;
+}
+
+.top_nav {
+    height: 170px;
+    width: 100%;
+    background-color: #262736;
+    display: flex;
+    justify-content: center;
+}
+
+.nav_center {
+    height: 100%;
+    width: 80%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+#top_hidari {
+    height: 100%;
+    width: 300px;
+    /* background-color: rgba(0, 255, 221, 0.342); */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#top_migi {
+    height: 100%;
+    width: 350px;
+    right: 60px;
+    /* background-color: rgba(0, 110, 255, 0.342); */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+
+
+.X_color {
+    background-image: linear-gradient(to right, rgb(96, 99, 255), rgb(214, 110, 255));
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+}
+
+.nav_center a {
+    font-size: 20px;
+    color: rgb(256, 256, 0);
+    margin: 20px;
+}
+
+#top_hedari {
+    font-size: 30px;
+}
+
+#top_name {
+    display: flex;
+    flex-direction: row;
+    color: rgb(256, 256, 0);
+}
+
+@media screen and (max-width: 656px){
+    .nav_center {
+        height: 100%;
+        width: 80%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+    }
+    #top_hidari {
+        height: 60%;
+        /* background-color: rgba(0, 255, 221, 0.342); */
+        position: relative;
+    }
+    #top_name {
+        position: absolute;
+        bottom: 0px;
+        display: flex;
+        flex-direction: row;
+    }
+    #top_migi {
+        height: 40%;
+    }
+}
+
+#backg {
+    height: 200px;
+    width: 100%;
+    overflow: hidden;
+}
+
+#backg img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+/* 实时监听窗口尺寸 */
+#windowSize {
+    height: 22px;
+    width: 130px;
+    background-color:rgb(45, 60, 66);
+    color: rgb(255, 238, 0);
+    position: absolute;
+    bottom: 5px;
+    right: 5px;
+    z-index: 9;
+}
+
+.one_box {
+    height: 1200px;
+    width: 100%;
+    background-color: #2b2c3a;
+}
+
+/* #tip_error {
+    height: 150px;
+    width: 350px;
+    background-color: #263336;
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    z-index: 999;
+} */
+
