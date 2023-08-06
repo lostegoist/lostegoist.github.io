@@ -213,7 +213,6 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    /* margin-top: 20px; */
 }
 @media screen and (min-width: 1230px) {
     .O_logo {
@@ -232,7 +231,9 @@ body {
 }
 #sc_d {
     grid-area: d;
-    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 #sc_e {
     grid-area: e;
