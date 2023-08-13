@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Lostegoist's Tips & Collections</title>
+        <link rel="icon" href="../img/lostlogo.webp">
+        <link rel="stylesheet" href="../css/core.css">
+    </head>
+    <body>
+        <div class="Abox">
+            <!-- 顶部导航栏标签 -->
+            <nav class="top_nav">
+                <div class="nav_center">
+                    <div id="top_hidari" onclick="window.location.href='../index.html'">
+                        <div id="top_name"><h1>Lostegoist's </h1>&nbsp;<h1 class="X_color"> Blog</h1></div>
+                    </div>
+                    <div id="top_migi">
+                        <a href="../text/Tags.html">Tags</a>
+                        <a href="../text/TandC.html">T & C</a>
+                        <a href="../text/About.html">About</a>
+                    </div>
+                </div>
+            </nav>
+
+            <!-- 正文内容部分 -->
+            <div class="one_box">
+                <div id="backg">
+                    <img src="../img/backg.webp">
+                </div>
+                <div class="up_box">
+                    <div class="con_box">
+                        <h1>一些古怪的小技巧</h1>
+                        <div class="---"></div>
+                        <p>&emsp;&emsp;「你存这些玩意干啥？」<br>&emsp;&emsp;「...这是以后要用到的妙妙小工具」</p>
+                        <p>&emsp;虽然算不上什么妙妙小工具，但是在遇到生活中琐碎的问题时，这些小技巧倒是时常能帮助到我。</p>
+                        <p>&emsp;尽管我所遇到的问题并不需要大费周折地去解决，但是每每遇到总会让我头疼一阵，所以我打算将他们一一记录在案。</p>
+                        <br><h3>&emsp;&emsp;或许需要实时更新</h3>
+                        <div class="--"></div>
+                        <h3>网页文本编辑</h3><br>
+                        <pre class="code_block"><span>document.designMode='on'</span></pre>
+                        <p>&emsp;document.designMode 控制整个文档是否可编辑，有效值为"on"和"off"。开启后可以修改网页内的任意文本内容。<br>
+                           &emsp;方法为在网页右键菜单>>检查>>控制台 内输入上方代码即可启用。注意，部分网站用方法阻止用户在控制台键入内容。</p>
+                        <div class="--"></div>
+                        <h3>修改Windows暂停系统更新时长</h3><br>
+                        <p>&emsp;在任务栏左侧“搜索”栏查找注册表编辑器，并定位到以下路径：</p>
+                        <pre class="code_block"><span>HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings</span></pre>
+                        <p>&emsp;在其中添加'DWORD'值，命名为'FlightSettingsMaxPauseDays'，基数选择'十进制'，在数据数值中填入数值。
+                           该数值即为Windows暂停系统更新时长的最高时长(单位为'天')。无需重启电脑即可应用。</p>
+                        <p>&emsp;可在设置>>更新和安全>>Windows更新>>高级选项>>暂停更新一栏中查看结果。</p>
+                    </div>
+                </div>
+            </div>
+            <div class="last_box">
+                <div class="mar" id="last_one"><h3>Powered by&ensp;<h3 id="lost_color">@lostegoist</h3></h3></div>
+                <p class="mar">&copy;2023-2023 LOEG-command</p>
+            </div>
+        </div>
+        <script src="../js/index.js"></script>
+    </body>
+</html>

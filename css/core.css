@@ -1,6 +1,3 @@
-/* 该文件同时为index与TandC页面提供CSS样式，修改时请注意！ */
-/* 该文件同时为index与TandC页面提供CSS样式，修改时请注意！ */
-/* 该文件同时为index与TandC页面提供CSS样式，修改时请注意！ */
 * {
     padding: 0;
     margin: 0;
@@ -36,7 +33,6 @@ body {
 #top_hidari {
     height: 100%;
     width: 300px;
-    /* background-color: rgba(0, 255, 221, 0.342); */
     display: flex;
     align-items: center;
     justify-content: center;
@@ -46,7 +42,6 @@ body {
     height: 100%;
     width: 350px;
     right: 60px;
-    /* background-color: rgba(0, 110, 255, 0.342); */
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -91,7 +86,6 @@ body {
     }
     #top_hidari {
         height: 60%;
-        /* background-color: rgba(0, 255, 221, 0.342); */
         position: relative;
     }
     #top_name {
@@ -117,6 +111,7 @@ body {
     object-fit: cover;
 }
 
+/* 内容板块 */
 .one_box {
     height: 1200px;
     width: 100%;
@@ -126,15 +121,6 @@ body {
     overflow-x: hidden;
 }
 
-.up_box {
-    height: 100%;
-    width: 100%;
-    z-index: 8;
-    position: absolute;
-    top: 60px;
-    overflow-y: hidden;
-    padding-top: 70px;
-}
 @keyframes up_ {
     from {
         opacity: 0;
@@ -150,57 +136,65 @@ body {
     animation-duration: 1s;
     animation-fill-mode: both;
     animation-name: up_;
-}
-
-.con_box {
-    height: 300px;
+    z-index: 8;
     width: 60%;
-    position: relative;
-    margin-bottom: 60px;
+    position: absolute;
+    top: 130px;
     left: 10%;
+    bottom: 0;
     background-color: #262736;
-    border-radius: 40px;
+    border-radius: 40px 40px 0px 0px;
     background: #262736;
     box-shadow:  23px 23px 46px #21222f,
                 -23px -23px 46px #2b2c3d;
-    transition: transform .2s;
-}
-.con_box:hover {
-    transform: scale(1.05);
+    text-align: center;
 }
 @media screen and (max-width:1090px){
-    .con_box {
+    .up_box {
         width: 654px;
-        position: relative;
+        position: absolute;
         left: 50%;
         margin-left: -327px;
     }
 }
 
 @media screen and (max-width:654px){
-    .con_box {
+    .up_box {
         width: 100%;
-        position: relative;
+        position: absolute;
         left: 0;
         margin: auto;
-        margin-bottom: 60px;
     }
 }
 
-.li_box {
+.con_box {
     height: 100%;
     padding: 30px;
-}
-/* 正文样式 */
-.li_box h1,.li_box h3,.li_box a,.li_box p {
     color: rgb(210,213,255);
+    text-align: left;
 }
-.li_box h1:hover {
-    color: rgb(255, 185, 185);
+.con_box h1 {
+    text-align: center;
 }
 
-/* 页尾 */
-.last_box {
+/* 分割线样式 */
+.--- {
+    height: 3px;
+    width: 100%;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    background-color: rgb(210,213,255);
+}
+.-- {
+    height: 2px;
+    width: 100%;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    background-color: rgb(210,213,255);
+}
+
+ /* 页尾 */
+ .last_box {
     height: 200px;
     width: 100%;
     color: rgb(256, 256, 0);
@@ -267,7 +261,7 @@ body {
     counter-increment: line;
     content: counter(line);
     display: inline-block;
-    width: 3em;
+    width: 0.2em;
     text-align: right;
     border-right: 2px solid #999;
     padding-right: .8em;
