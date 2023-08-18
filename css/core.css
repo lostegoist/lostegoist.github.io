@@ -182,7 +182,10 @@ body {
 .con_box a:hover {
     color: rgb(255, 174, 0);
 }
-
+.li::before {
+    content: " ◈ ";
+    color: rgb(161, 168, 255);
+}
 /* 分割线样式 */
 .--- {
     height: 3px;
