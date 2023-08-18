@@ -186,6 +186,9 @@ body {
     content: " ◈ ";
     color: rgb(161, 168, 255);
 }
+.zhushi {
+    color: rgb(166, 169, 202);
+}
 /* 分割线样式 */
 .--- {
     height: 3px;
