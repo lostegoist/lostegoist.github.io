@@ -189,6 +189,9 @@ body {
 .zhushi {
     color: rgb(166, 169, 202);
 }
+.con_box img {
+    margin: 10px;
+}
 /* 分割线样式 */
 .--- {
     height: 3px;
@@ -266,7 +269,7 @@ body {
 }
 .code_block span {
     display: block;
-    line-height: 1.5rem;
+    line-height: 1rem;
     white-space: pre;
 }
 .code_block span::before {
@@ -276,7 +279,7 @@ body {
     width: 0.2em;
     text-align: right;
     border-right: 2px solid #999;
-    padding-right: .8em;
+    padding-right: 2em;
     margin-right: 1em;
     color: #999;
 }

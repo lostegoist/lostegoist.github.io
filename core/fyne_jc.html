@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>关于Windows上fyne的安装流程</title>
+        <link rel="icon" href="../img/lostlogo.webp">
+        <link rel="stylesheet" href="../css/core.css">
+    </head>
+    <body>
+        <div class="Abox">
+            <!-- 顶部导航栏标签 -->
+            <nav class="top_nav">
+                <div class="nav_center">
+                    <div id="top_hidari" onclick="window.location.href='../index.html'">
+                        <div id="top_name"><h1>Lostegoist's </h1>&nbsp;<h1 class="X_color"> Blog</h1></div>
+                    </div>
+                    <div id="top_migi">
+                        <a href="../text/Tags.html">Tags</a>
+                        <a href="../text/TandC.html">T & C</a>
+                        <a href="../text/About.html">About</a>
+                    </div>
+                </div>
+            </nav>
+
+            <!-- 正文内容部分 -->
+            <div class="one_box" style="height: 3500px;">
+                <div id="backg">
+                    <img src="../img/backg.webp">
+                </div>
+                <div class="up_box">
+                    <div class="con_box">
+                        <h1>关于Go语言的GUI库之fyne在Windows平台上的安装流程</h1>
+                        <div class="---"></div>
+                        <p>&emsp;&emsp;在一时兴起之下，我开始了go语言的学习。为了能构建出更贴近日常使用的程序，经过查询，我打算使用fyne来作为GUI库。</p><br>
+                        <p>&emsp;&emsp;经过网上的检索，我汇总为如下的流程。</p>
+                        <div class="--"></div>
+                        <h3>前置作业</h3><br>
+                        <p>&emsp;&emsp;当你打算使用fyne作为GUI库时，你需要先准备3样道具</p><br>
+                        <ul>
+                            <li>Go工具(至少为1.12版本)<a href="https://golang.google.cn/dl/">golang.google.cn</a></li>
+                            <li>C 编译器(本教程将使用MSYS2和mingw编译器)<a href="https://www.msys2.org/">msys2.org/</a></li>
+                            <li>系统图形驱动程序(在Windows中并不需要动手操作)</li>
+                        </ul><br>
+                        <p>&emsp;&emsp;当准备好前两个工具的文件就可以准备开始了</p>
+                        <img src="../img/fils.webp">
+                        <p>&emsp;&emsp;两个文件都是比较简单的安装步骤，一路通过即可。</p>
+                        <p>&emsp;&emsp;安装完Go后，请在系统环境变量中检查是否将go/bin添加至了path(一般会自动添加进系统变量)</p>
+                        <div class="--"></div>
+                        <h3>MSYS2中执行安装mingw编译器</h3><br>
+                        <p>&emsp;&emsp;当安装完msys2后，会弹出MSYS的终端工具。但是请关闭掉这个工具，从开始菜单的左侧程序列表中找到“MSYS MINGW64”并打开。</p>
+                        <p>&emsp;&emsp;在MSYS MINGW64窗口中执行以下代码(如果有要求安装选项，请选择全部安装,安装过程有些长。)</p>
+                        <pre class="code_block">
+                            <span>$ pacman -Syu</span>
+                            <span>$ pacman -S git mingw-w64-x86_64-toolchain</span>
+                        </pre>
+                        <p>&emsp;&emsp;安装完成后请将“MSYS64\mingw64\bin”添加进系统变量path中，具体方法请自行查询。</p>
+                        <p>&emsp;&emsp;然后请打开powershell或者cmd，并输入gcc来检查是否正常添加C编译器。以下输出即为成功。</p>
+                        <img src="../img/gcc.webp">
+                        <div class="--"></div>
+                        <h3>安装fyne库</h3><br>
+                        <p>&emsp;&emsp;进入你的项目文件夹，按住shift并右键，点击“在此处打开powershell窗口”。并执行如下命令以安装fyne模块。(注：关于以下命令的执行位置，笔者可能有勘误，请自行测试。)</p>
+                        <pre class="code_block">
+                            <span>go get fyne.io/fyne/v2@latest</span>
+                            <span>go install fyne.io/fyne/v2/cmd/fyne@latest</span>
+                        </pre>
+                        <p>&emsp;&emsp;会报错说明你需要一个.mod文件，请在你的项目文件夹内打开powershell并输入以下指令。</p>
+                        <pre class="code_block">
+                            <span>go mod init “此处填写你自定义的模块名”</span>
+                        </pre>
+                        <p>&emsp;&emsp;然后再执行上述命令，至此fyne已成功安装。</p>
+                        <div class="--"></div>
+                        <h3>导入fyne库</h3><br>
+                        <p>&emsp;&emsp;安装fyne库后，则需要在正式项目中导入使用。</p>
+                        <p>&emsp;&emsp;在项目文件夹下打开powershell窗口，并键入以下指令初始化包</p>
+                        <pre class="code_block">
+                            <span>go mod init “此处填写你自定义的模块名”</span>
+                        </pre>
+                        <p>&emsp;&emsp;执行下面命令以导入fyne库。</p>
+                        <pre class="code_block">
+                            <span>go get fyne.io/fyne/v2</span>
+                        </pre>
+                        <img src="../img/init.webp">
+                        <p>&emsp;&emsp;以上结果为成功例子。接下来便是构建main.go文件来编写例子，以下为示例代码。</p>
+                        <pre class="code_block">
+                            <span>package main</span>
+                            <span></span>
+                            <span>import (</span>
+                            <span>	"fyne.io/fyne/v2/app"</span>
+                            <span>	"fyne.io/fyne/v2/container"</span>
+                            <span>	"fyne.io/fyne/v2/widget"</span>
+                            <span>)</span>
+                            <span></span>
+                            <span>func main() {</span>
+                            <span>	a := app.New()</span>
+                            <span>	w := a.NewWindow("Hello")</span>
+                            <span></span>
+                            <span>	hello := widget.NewLabel("Hello Fyne!")</span>
+                            <span>	w.SetContent(container.NewVBox(</span>
+                            <span>		hello,</span>
+                            <span>		widget.NewButton("Hi!", func() {</span>
+                            <span>			hello.SetText("Welcome :)")</span>
+                            <span>		}),</span>
+                            <span>	))</span>
+                            <span></span>
+                            <span>	w.ShowAndRun()</span>
+                            <span>}</span>
+                        </pre>
+                        <div class="--"></div>
+                        <h3>解决常见报错</h3><br>
+                        <p>&emsp;&emsp;如果你按上述方法写下了代码，你可能会发现有大量的报错警告。原因可能为代码中使用了第三方库，但是go.mod中并没有更新。</p>
+                        <p>&emsp;&emsp;而解决方法如下，在项目文件夹下打开powershell并执行如下命令。</p>
+                        <pre class="code_block">
+                            <span>go mod tidy</span>
+                        </pre>
+                        <P>&emsp;&emsp;这行代码的会删除不需要的包，并下载新的包而更新go.mod。</P>
+                        <p>&emsp;&emsp;或许即使运行完上述命令，警告还是存在，可以重启编辑器以刷新，发现没有报错。</p>
+                        <div class="--"></div>
+                        <h3>编译与运行</h3><br>
+                        <p>&emsp;&emsp;使用以下命令以运行main.go,请在项目文件夹下打开powershell并键入。</p>
+                        <pre class="code_block">
+                            <span>go run main.go</span>
+                        </pre>
+                        <p>&emsp;&emsp;或者使用以下命令将文件编译为exe可执行文件，编译时间可能有些长。</p>
+                        <pre class="code_block">
+                            <span>go build -x main.go</span>
+                        </pre>
+                        <div class="--"></div>
+                        <h3>参考链接</h3><br>
+                        <p><a href="https://developer.fyne.io/started/">https://developer.fyne.io/started/</a></p>
+                        <p><a href="https://www.msys2.org/">https://www.msys2.org/</a></p>
+                        <p><a href="https://zhuanlan.zhihu.com/p/401188789">https://zhuanlan.zhihu.com/p/401188789</a></p>
+                        <p><a href="https://blog.csdn.net/iamhuanyu/article/details/129670053#circle=on">https://blog.csdn.net/iamhuanyu/article/details/129670053#circle=on</a></p>
+                    </div>
+                </div>
+            </div>
+            <div class="last_box">
+                <div class="mar" id="last_one"><h3>Powered by&ensp;<h3 id="lost_color">@lostegoist</h3></h3></div>
+                <p class="mar">&copy;2023-2023 LOEG-command</p>
+            </div>
+        </div>
+        <script src="../js/index.js"></script>
+    </body>
+</html>
