@@ -64,7 +64,7 @@
                             <span>go get fyne.io/fyne/v2@latest</span>
                             <span>go install fyne.io/fyne/v2/cmd/fyne@latest</span>
                         </pre>
-                        <p>&emsp;&emsp;会报错说明你需要一个.mod文件，请在你的项目文件夹内打开powershell并输入以下指令。</p>
+                        <p>&emsp;&emsp;会报错说明需要一个.mod文件，请在你的项目文件夹内打开powershell并输入以下指令。</p>
                         <pre class="code_block">
                             <span>go mod init “此处填写你自定义的模块名”</span>
                         </pre>
@@ -108,7 +108,7 @@
                         </pre>
                         <div class="--"></div>
                         <h3>解决常见报错</h3><br>
-                        <p>&emsp;&emsp;如果你按上述方法写下了代码，你可能会发现有大量的报错警告。原因可能为代码中使用了第三方库，但是go.mod中并没有更新。</p>
+                        <p>&emsp;&emsp;如果按上述方法写下了代码，你可能会发现有大量的报错警告。原因可能为代码中使用了第三方库，但是go.mod中并没有更新。</p>
                         <p>&emsp;&emsp;而解决方法如下，在项目文件夹下打开powershell并执行如下命令。</p>
                         <pre class="code_block">
                             <span>go mod tidy</span>
