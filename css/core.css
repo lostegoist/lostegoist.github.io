@@ -132,6 +132,15 @@ body {
     }
 }
 
+/* 装饰样式-挂件 */
+.orna_box {
+    position: absolute;
+    width: 536px;
+    height: 311px;
+    bottom: 0;
+    right: 0;
+}
+
 .up_box {
     animation-duration: 1s;
     animation-fill-mode: both;

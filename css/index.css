@@ -199,6 +199,15 @@ body {
     color: rgb(255, 185, 185);
 }
 
+/* 装饰样式-挂件 */
+.orna_box {
+    position: absolute;
+    width: 536px;
+    height: 311px;
+    bottom: 0;
+    right: 0;
+}
+
 /* 页尾 */
 .last_box {
     height: 200px;
